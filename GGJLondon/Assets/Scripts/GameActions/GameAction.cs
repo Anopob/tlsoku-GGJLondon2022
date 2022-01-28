@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class GameAction
 {
-    private int _x, _y;
-    private Board _board;
+    protected int _x, _y;
+    protected Board _board;
 
     public abstract void Redo();
     public abstract void Undo();
