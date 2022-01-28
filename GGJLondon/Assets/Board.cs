@@ -8,10 +8,16 @@ public class Board : MonoBehaviour
 
     private Tile[,] tiles;
     private Color storedColour;
+    private int boardWidth, boardHeight;
     
     public void SwapTiles(int tile1x, int tile1y, int tile2x, int tile2y)
     {
         Debug.Log("Swapping Tiles");
+        
+        tile1x = tile1x % boardWidth;
+        tile1y = tile1y % boardHeight;
+        tile2x = tile2x % boardWidth;
+        tile2y = tile2y % boardHeight;
         Tile tile1 = tiles[tile1x,tile1y];
         Tile tile2 = tiles[tile2x,tile2y];
         Color tempColour = tile1.colour;
@@ -35,6 +41,8 @@ public class Board : MonoBehaviour
         
         tiles = new Tile[width,height];
         
+        boardWidth = width;
+        boardHeight = height;
         
         for (int i = 0; i < width; i++)
             for (int j = 0;  j < height; j++)
