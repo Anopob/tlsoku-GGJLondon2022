@@ -78,12 +78,21 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Color[,] puzzle = new Color[,]{
-            {Color.blue, Color.red, Color.green, Color.magenta},
-            {Color.blue, Color.magenta, Color.red, Color.green},
-            {Color.blue, Color.green, Color.red, Color.magenta},
-            {Color.blue, Color.red, Color.green, Color.magenta},
-        };
+        Color[,] puzzle;
+        if (Random.Range(0,2) == 0)
+            puzzle = new Color[,]{
+                {Color.blue, Color.red, Color.green, Color.magenta},
+                {Color.blue, Color.magenta, Color.red, Color.green},
+                {Color.blue, Color.green, Color.red, Color.magenta},
+                {Color.blue, Color.red, Color.green, Color.magenta},
+            };
+        else
+            puzzle = new Color[,]{
+                {Color.green, Color.red, Color.green, Color.magenta},
+                {Color.blue, Color.magenta, Color.blue, Color.green},
+                {Color.blue, Color.green, Color.magenta, Color.magenta},
+                {Color.red, Color.red, Color.green, Color.magenta},
+            };
         
         CreateBoard(4,4, puzzle);
     }
