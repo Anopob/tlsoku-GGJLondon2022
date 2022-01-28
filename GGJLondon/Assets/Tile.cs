@@ -7,24 +7,24 @@ public class Tile : MonoBehaviour
 {
     public Color colour;
     private Image _image;
+    private Outline _outline;
     
     void setColour(Color c)
     {
         colour = c;
-        _Image.color =  c;
+        _image.color =  c;
     }
  
     void setHighlight(bool on)
     {
         if (on)
         {
-            setColour(Color.red);
-
+            _outline.effectColor = Color.yellow;
         }
         
         else
         {
-            setColour(Color.blue);
+            _outline.effectColor = Color.black;
         }
         
     }
@@ -43,6 +43,7 @@ public class Tile : MonoBehaviour
     void Start()
     {
         _image = GetComponent<Image>();
+        _outline = GetComponent<Outline>();
     }
 
     // Update is called once per frame
