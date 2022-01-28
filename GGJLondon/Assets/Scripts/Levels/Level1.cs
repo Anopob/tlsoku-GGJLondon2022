@@ -12,6 +12,7 @@ public class Level1 : LevelManager
         _board1Actions.Peek().Redo();
         _board2Actions.Push(new GARightSwap(x, y, _board2));
         _board2Actions.Peek().Redo();
+        CheckEndOfGame();
     }
 
     public override void OnRightClick(int x, int y)
@@ -20,5 +21,6 @@ public class Level1 : LevelManager
         _board1Actions.Peek().Redo();
         _board2Actions.Push(new GADownSwap(x, y, _board2));
         _board2Actions.Peek().Redo();
+        CheckEndOfGame();
     }
 }

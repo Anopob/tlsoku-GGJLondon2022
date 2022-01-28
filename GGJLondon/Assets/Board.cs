@@ -8,7 +8,7 @@ public class Board : MonoBehaviour
     public Tile tilePrefab;
     public Image storageDisplay;
 
-    private Tile[,] tiles;
+    public Tile[,] tiles;
     public Color storedColour;
     private int boardWidth, boardHeight;
 

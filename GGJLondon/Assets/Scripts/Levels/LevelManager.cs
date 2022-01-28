@@ -19,6 +19,27 @@ public abstract class LevelManager : MonoBehaviour
         // todo : redo (stretch goal)
     }
 
+    public bool IsPlayerVictorious()
+    {
+        for (int i = 0; i < _board1.tiles.GetLength(0); i++)
+        {
+            for (int j = 0; j < _board1.tiles.GetLength(1); j++)
+            {
+                if (_board1.tiles[i, j].colour != _board2.tiles[i, j].colour)
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    public void CheckEndOfGame()
+    {
+        if (IsPlayerVictorious())
+        {
+            Debug.Log("Victory!");
+        }
+    }
+
     public abstract void OnLeftClick(int x, int y);
     public abstract void OnRightClick(int x, int y);
     
