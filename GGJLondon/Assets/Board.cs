@@ -11,17 +11,18 @@ public class Board : MonoBehaviour
     
     public void SwapTiles(int tile1x, int tile1y, int tile2x, int tile2y)
     {
+        Debug.Log("Swapping Tiles");
         Tile tile1 = tiles[tile1x,tile1y];
         Tile tile2 = tiles[tile2x,tile2y];
         Color tempColour = tile1.colour;
-        tile1.colour = tile2.colour;
-        tile2.colour = tempColour;
+        tile1.SetColour(tile2.colour);
+        tile2.SetColour(tempColour);
     }
     
     public void ColourTile(int tilex, int tiley, Color colour)
     {
         Tile tile = tiles[tilex,tiley];
-        tile.setColour(colour);
+        tile.SetColour(colour);
     }
     
     private void CreateBoard(int width, int height, Color[,] layout)
@@ -41,7 +42,7 @@ public class Board : MonoBehaviour
                 Tile t = Instantiate(tilePrefab, transform);
                 t.x = i;
                 t.y = j;
-                t.setColour(layout[i,j]);
+                t.SetColour(layout[i,j]);
                 tiles[i,j] = t;
             }
 
@@ -67,4 +68,14 @@ public class Board : MonoBehaviour
     {
         
     }
+    
+    
+    
+    // ------- EVENTS ------
+    /*
+    void TileLeftClick(Vector2Int info)
+    {
+        SwapTiles(info[0], info[1],info[0]+1, info[1]);
+    }
+    */
 }
