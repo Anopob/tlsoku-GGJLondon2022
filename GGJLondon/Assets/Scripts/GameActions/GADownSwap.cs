@@ -15,12 +15,12 @@ namespace Assets.Scripts.Actions
 
         public override void Redo()
         {
-            Board.SwapTiles(_x, _y, _x, _y+1);
+            _board.SwapTiles(_x, _y, _x, _y+1);
         }
 
         public override void Undo()
         {
-            Board.SwapTiles(_x, _y, _x, _y+1);
+            _board.SwapTiles(_x, _y, _x, _y+1);
         }
     }
 }
