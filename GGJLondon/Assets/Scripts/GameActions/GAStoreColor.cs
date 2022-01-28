@@ -7,13 +7,14 @@ using UnityEngine;
 
 public class GAStoreColor : GameAction
 {
+    protected Color _oldColor;
     public GAStoreColor(int x, int y, Board board) : base(x, y, board)
     {
     }
 
     public override void Redo()
     {
-        // store color
+        _oldColor = _board.StoreColour(_board.GetTile(_x, _y).colour);
     }
 
     public override void Undo()

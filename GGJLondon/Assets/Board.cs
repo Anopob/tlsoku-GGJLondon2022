@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Board : MonoBehaviour
 {
     public Tile tilePrefab;
+    public Image storageDisplay;
 
     private Tile[,] tiles;
-    private Color storedColour;
+    public Color storedColour;
     private int boardWidth, boardHeight;
-    
+
     public void SwapTiles(int tile1x, int tile1y, int tile2x, int tile2y)
     {
         Debug.Log("Swapping Tiles");
@@ -29,6 +31,21 @@ public class Board : MonoBehaviour
     {
         Tile tile = tiles[tilex,tiley];
         tile.SetColour(colour);
+    }
+    
+    // Stores a colour for painting, returns the old colour
+    public Color StoreColour(Color colour)
+    {
+        Color temp = storedColour;
+        storedColour = colour;
+        storageDisplay.color = colour;
+        return temp;
+        
+    }
+    
+    public Tile GetTile(int x, int y)
+    {
+        return tiles[x,y];
     }
     
     private void CreateBoard(int width, int height, Color[,] layout)
