@@ -432,6 +432,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1148897180120236928, guid: 6da58d5df78bc7149b4fff294f21e24c, type: 3}
+      propertyPath: m_Spacing.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148897180120236928, guid: 6da58d5df78bc7149b4fff294f21e24c, type: 3}
+      propertyPath: m_Spacing.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1148897180120236930, guid: 6da58d5df78bc7149b4fff294f21e24c, type: 3}
       propertyPath: m_Name
       value: Board

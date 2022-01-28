@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class Tile : MonoBehaviour
 {
     public Color colour;
+    public int x,y = 0;
+    
     private Image _image;
     private Outline _outline;
     
-    void setColour(Color c)
+    public void setColour(Color c)
     {
         colour = c;
         _image.color =  c;
+
     }
  
     void setHighlight(bool on)
@@ -40,7 +43,7 @@ public class Tile : MonoBehaviour
     }
  
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _image = GetComponent<Image>();
         _outline = GetComponent<Outline>();
