@@ -19,4 +19,16 @@ public abstract class LevelManager : MonoBehaviour
 
     public abstract void OnLeftClick(int x, int y);
     public abstract void OnRightClick(int x, int y);
+    
+    
+    // EVENTS
+    public void TileLeftClick(Vector2Int data)
+    {
+        OnLeftClick(data[0], data[1]);   
+    }
+    
+    public void TileRightClick(Vector2Int data)
+    {
+        OnRightClick(data[0], data[1]);
+    }
 }
