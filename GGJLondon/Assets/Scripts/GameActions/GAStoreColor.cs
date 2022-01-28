@@ -5,19 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class GARightSwap : GameAction
+public class GAStoreColor : GameAction
 {
-    public GARightSwap(int x, int y, Board board) : base(x, y, board)
+    public GAStoreColor(int x, int y, Board board) : base(x, y, board)
     {
     }
 
     public override void Redo()
     {
-        _board.SwapTiles(_x, _y, _x + 1, _y);
+        // store color
     }
 
     public override void Undo()
     {
-        _board.SwapTiles(_x, _y, _x + 1, _y);
+        // unstore color
     }
 }
