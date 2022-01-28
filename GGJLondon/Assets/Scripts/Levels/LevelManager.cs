@@ -5,11 +5,13 @@ using UnityEngine;
 public abstract class LevelManager : MonoBehaviour
 {
     [SerializeField] protected Board _board1, _board2;
-    protected Stack<GameAction> _gameActions = new Stack<GameAction>();
+    protected Stack<GameAction> _board1Actions = new Stack<GameAction>();
+    protected Stack<GameAction> _board2Actions = new Stack<GameAction>();
 
     public void OnUndoClick()
     {
-        _gameActions.Pop().Undo();
+        _board1Actions.Pop().Undo();
+        _board2Actions.Pop().Undo();
     }
 
     public void OnRedoClick()
