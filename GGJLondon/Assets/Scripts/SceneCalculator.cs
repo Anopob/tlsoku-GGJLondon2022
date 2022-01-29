@@ -16,6 +16,7 @@ public class SceneCalculator : MonoBehaviour
     private AudioController _audioController;
 
     public Dictionary<int, string> LevelNumberToName = new Dictionary<int, string>();
+    private Dictionary<int, Type> _levelNumberToScript = new Dictionary<int, Type>();
     private static SceneCalculator _instance;
     private int _level = -1;
 
@@ -46,6 +47,8 @@ public class SceneCalculator : MonoBehaviour
         LevelNumberToName.Add(7, "Level7");
         LevelNumberToName.Add(8, "Level8");
         LevelNumberToName.Add(9, "Level9");
+
+        _levelNumberToScript.Add(0, typeof(Level1));
     }
 
     public void StartNewGame()
@@ -57,6 +60,11 @@ public class SceneCalculator : MonoBehaviour
     {
         if (_level == LAST_LEVEL_INDEX)
             HasBeatenGame = true;
+    }
+
+    public Type GetLevelScript()
+    {
+        return _levelNumberToScript[_level];
     }
 
     public void GoToNextLevel()
