@@ -17,28 +17,51 @@ public class Board : MonoBehaviour
         tiles[x, y].SetHighlight(isHighlightOn);
     }
 
-    public void ShiftRowLeft(int row)
+    public void ShiftColumnUp(int column)
     {
-        Color temp = tiles[0, row].colour;
+        Color temp = tiles[0, column].colour;
 
         for (int i = 0; i < tiles.GetLength(1) - 1; i++)
         {
-            tiles[i, row].SetColour(tiles[i + 1, row].colour);
+            tiles[i, column].SetColour(tiles[i + 1, column].colour);
         }
 
-        tiles[tiles.GetLength(0) - 1, row].SetColour(temp);
+        tiles[tiles.GetLength(0) - 1, column].SetColour(temp);
+    }
+
+    public void ShiftColumnDown(int column)
+    {
+        Color temp = tiles[tiles.GetLength(0) - 1, column].colour;
+
+        for (int i = tiles.GetLength(1) - 1; i > 0; i--)
+        {
+            tiles[i, column].SetColour(tiles[i - 1, column].colour);
+        }
+
+        tiles[0, column].SetColour(temp);
+    }
+
+    public void ShiftRowLeft(int row)
+    {
+        Color temp = tiles[row, 0].colour;
+        for (int i = 0; i < tiles.GetLength(0) - 1; i++)
+        {
+            tiles[row, i].SetColour(tiles[row, i + 1].colour);
+        }
+
+        tiles[row, tiles.GetLength(0) - 1].SetColour(temp);
     }
 
     public void ShiftRowRight(int row)
     {
-        Color temp = tiles[tiles.GetLength(0) - 1, row].colour;
+        Color temp = tiles[row, tiles.GetLength(0) - 1].colour;
 
-        for (int i = tiles.GetLength(1) - 1; i > 0; i--)
+        for (int i = tiles.GetLength(0) - 1; i > 0; i--)
         {
-            tiles[i, row].SetColour(tiles[i - 1, row].colour);
+            tiles[row, i].SetColour(tiles[row, i - 1].colour);
         }
 
-        tiles[0, row].SetColour(temp);
+        tiles[row, 0].SetColour(temp);
     }
 
     public void SwapTiles(int tile1x, int tile1y, int tile2x, int tile2y)
