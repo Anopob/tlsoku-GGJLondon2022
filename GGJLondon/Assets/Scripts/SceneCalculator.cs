@@ -40,12 +40,14 @@ public class SceneCalculator : MonoBehaviour
         _levelNumberToScript.Add(1, typeof(Level2));
         _levelNumberToScript.Add(2, typeof(Levelabc));
         _levelNumberToScript.Add(3, typeof(LevelPainting));
+        _levelNumberToScript.Add(4, typeof(LevelSliding));
+        _levelNumberToScript.Add(5, typeof(LevelWaterFire));
         _levelNumberToScript.Add(10, typeof(Level1));
     }
 
     public void StartNewGame()
     {
-        GoToLevelNumber(3);
+        GoToLevelNumber(5);
     }
 
     public void JustBeatLevel()
