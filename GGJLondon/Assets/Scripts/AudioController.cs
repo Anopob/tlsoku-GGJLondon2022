@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip _mainMenuTheme, _gameplayTheme, _buttonClickClip;
+    private AudioClip _mainMenuTheme, _gameplayTheme, _buttonClickClip, _invalidMoveClip;
     private static AudioController _instance;
     private static AudioSource _musicSource;
     private static AudioSource _soundSource;
@@ -55,6 +55,12 @@ public class AudioController : MonoBehaviour
     public void PlayButtonClickClip()
     {
         _soundSource.clip = _buttonClickClip;
+        _soundSource.Play();
+    }
+
+    public void PlayInvalidMoveClip()
+    {
+        _soundSource.clip = _invalidMoveClip;
         _soundSource.Play();
     }
 
