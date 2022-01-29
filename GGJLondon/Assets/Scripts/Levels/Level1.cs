@@ -10,6 +10,7 @@ public class Level1 : LevelManager
     public override void SetupBoards(Board boardPrefab)
     {
         base.SetupBoards(boardPrefab);
+        // enable "storage image" child
         _board1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         
         Color[,] puzzle1 = new Color[,]{

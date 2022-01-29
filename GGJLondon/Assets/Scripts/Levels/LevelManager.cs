@@ -60,13 +60,11 @@ public abstract class LevelManager : MonoBehaviour
     // EVENTS
     public void TileLeftClick(Vector2Int data)
     {
-        Debug.Log("Manager sees left click");
         OnLeftClick(data[0], data[1]);   
     }
     
     public void TileRightClick(Vector2Int data)
     {
-        Debug.Log("Manager sees right click");
         OnRightClick(data[0], data[1]);
     }
 
