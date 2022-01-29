@@ -30,7 +30,7 @@ public abstract class LevelManager : MonoBehaviour
         // todo : redo (stretch goal)
     }
 
-    public bool IsPlayerVictorious()
+    private bool IsPlayerVictorious()
     {
         for (int i = 0; i < _board1.tiles.GetLength(0); i++)
         {
@@ -90,5 +90,13 @@ public abstract class LevelManager : MonoBehaviour
         {
             PerformUndo();
         }
+    }
+
+    public virtual void SetupBoards(Board boardPrefab)
+    {
+        _board1 = Instantiate(boardPrefab, transform);
+
+        _board2 = Instantiate(boardPrefab, transform);
+        _board2.transform.position = transform.position + new Vector3(150, 0, 0);
     }
 }

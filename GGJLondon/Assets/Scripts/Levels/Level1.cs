@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 public class Level1 : LevelManager
 {
+    public override void SetupBoards(Board boardPrefab)
+    {
+        base.SetupBoards(boardPrefab);
+        _board1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+    }
+
     public override void OnLeftClick(int x, int y)
     {
         _board1Actions.Push(new GAStoreColor(x, y, _board1));
