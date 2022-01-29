@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class GAPaintStoredColor : GameAction
 {
-    protected Color _oldColor;
+    protected int _oldColor;
     
     public GAPaintStoredColor(int x, int y, Board board) : base(x, y, board)
     {
@@ -16,13 +16,13 @@ public class GAPaintStoredColor : GameAction
     public override bool Redo()
     {
         
-        _oldColor = _board.GetTile(_x, _y).colour;
-        _board.ColourTile(_x, _y, _board.storedColour);
-        return (_oldColor != _board.storedColour);
+        _oldColor = _board.GetTile(_x, _y).type;
+        _board.SetTileType(_x, _y, _board.storedType);
+        return (_oldColor != _board.storedType);
     }
 
     public override void Undo()
     {
-        _board.GetTile(_x, _y).SetColour(_oldColor);
+        _board.SetTileType(_x, _y, _oldColor);
     }
 }

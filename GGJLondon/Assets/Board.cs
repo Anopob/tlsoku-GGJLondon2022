@@ -77,19 +77,37 @@ public class Board : MonoBehaviour
         tile1.SetType(tile2.type);
         tile2.SetType(tempType);
     }
-    
+/*    
     public void ColourTile(int tilex, int tiley, Color colour)
     {
         Tile tile = tiles[tilex,tiley];
         tile.SetColour(colour);
     }
-    
+*/    
     // Stores a colour for painting, returns the old colour
+    /*
     public Color StoreColour(Color colour)
     {
         Color temp = storedColour;
         storedColour = colour;
         storageDisplay.color = colour;
+        return temp;
+        
+    }
+    */
+    
+    public void SetTileType(int tilex, int tiley, int type)
+    {
+        Tile tile = tiles[tilex,tiley];
+        tile.SetType(type);
+    }
+    
+    // Stores a type for painting, returns the old colour
+    public int StoreType(int type)
+    {
+        int temp = storedType;
+        storedType = type;
+//        storageDisplay.color = colour;
         return temp;
         
     }

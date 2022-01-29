@@ -7,21 +7,21 @@ using UnityEngine;
 
 public class GAStoreColor : GameAction
 {
-    protected Color _oldColor = Color.black;
+    protected int _oldColor = 5;
     public GAStoreColor(int x, int y, Board board) : base(x, y, board)
     {
     }
 
     public override bool Redo()
     {
-        Color storageColour  = _board.GetTile(_x, _y).colour;
-        _oldColor = _board.StoreColour(storageColour);
+        int storageColour  = _board.GetTile(_x, _y).type;
+        _oldColor = _board.StoreType(storageColour);
         return (_oldColor != storageColour);
     }
 
     public override void Undo()
     {
-        if (_oldColor != Color.black)
-            _board.StoreColour(_oldColor);
+        if (_oldColor != 5)
+            _board.StoreType(_oldColor);
     }
 }
