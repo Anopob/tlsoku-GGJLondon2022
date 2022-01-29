@@ -60,6 +60,19 @@ public abstract class LevelManager : MonoBehaviour
         }
     }
 
+    protected void PerformMove()
+    {
+        bool board1Result = _board1Actions.Peek().Redo();
+        bool board2Result = _board2Actions.Peek().Redo();
+        if (!(board1Result && board2Result))
+            UndoInvalidAction();
+        else
+        {
+            _audioController.PlayValidMoveClip();
+            CheckEndOfGame();
+        }
+    }
+
     public abstract void OnLeftClick(int x, int y);
     public abstract void OnRightClick(int x, int y);
     
