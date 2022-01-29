@@ -13,12 +13,12 @@ public class GAShiftLeft : GameAction
 
     public override bool Redo()
     {
-        _board.ShiftRowLeft(_y);
+        _board.ShiftRowLeft(_x);
         return true;
     }
 
     public override void Undo()
     {
-        _board.ShiftRowRight(_y);
+        _board.ShiftRowRight(_x);
     }
 }
