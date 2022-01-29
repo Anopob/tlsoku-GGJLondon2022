@@ -10,7 +10,7 @@ public class Level1 : LevelManager
     {
         _board1Actions.Push(new GAStoreColor(x, y, _board1));
         _board1Actions.Peek().Redo();
-        _board2Actions.Push(new GARightSwap(x, y, _board2));
+        _board2Actions.Push(new GAShiftLeft(x, y, _board2));
         _board2Actions.Peek().Redo();
         CheckEndOfGame();
     }
