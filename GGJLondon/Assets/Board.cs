@@ -10,6 +10,7 @@ public class Board : MonoBehaviour
 
     public Tile[,] tiles;
     public Color storedColour;
+    public int storedType;
     private int boardWidth, boardHeight;
 
     public void SetHighlight(int x, int y, bool isHighlightOn)
@@ -19,49 +20,49 @@ public class Board : MonoBehaviour
 
     public void ShiftColumnUp(int column)
     {
-        Color temp = tiles[0, column].colour;
+        int temp = tiles[0, column].type;
 
         for (int i = 0; i < tiles.GetLength(1) - 1; i++)
         {
-            tiles[i, column].SetColour(tiles[i + 1, column].colour);
+            tiles[i, column].SetType(tiles[i + 1, column].type);
         }
 
-        tiles[tiles.GetLength(0) - 1, column].SetColour(temp);
+        tiles[tiles.GetLength(0) - 1, column].SetType(temp);
     }
 
     public void ShiftColumnDown(int column)
     {
-        Color temp = tiles[tiles.GetLength(0) - 1, column].colour;
+        int temp = tiles[tiles.GetLength(0) - 1, column].type;
 
         for (int i = tiles.GetLength(1) - 1; i > 0; i--)
         {
-            tiles[i, column].SetColour(tiles[i - 1, column].colour);
+            tiles[i, column].SetType(tiles[i - 1, column].type);
         }
 
-        tiles[0, column].SetColour(temp);
+        tiles[0, column].SetType(temp);
     }
 
     public void ShiftRowLeft(int row)
     {
-        Color temp = tiles[row, 0].colour;
+        int temp = tiles[row, 0].type;
         for (int i = 0; i < tiles.GetLength(0) - 1; i++)
         {
-            tiles[row, i].SetColour(tiles[row, i + 1].colour);
+            tiles[row, i].SetType(tiles[row, i + 1].type);
         }
 
-        tiles[row, tiles.GetLength(0) - 1].SetColour(temp);
+        tiles[row, tiles.GetLength(0) - 1].SetType(temp);
     }
 
     public void ShiftRowRight(int row)
     {
-        Color temp = tiles[row, tiles.GetLength(0) - 1].colour;
+        int temp = tiles[row, tiles.GetLength(0) - 1].type;
 
         for (int i = tiles.GetLength(0) - 1; i > 0; i--)
         {
-            tiles[row, i].SetColour(tiles[row, i - 1].colour);
+            tiles[row, i].SetType(tiles[row, i - 1].type);
         }
 
-        tiles[row, 0].SetColour(temp);
+        tiles[row, 0].SetType(temp);
     }
 
     public void SwapTiles(int tile1x, int tile1y, int tile2x, int tile2y)
@@ -72,9 +73,9 @@ public class Board : MonoBehaviour
         tile2y = tile2y % boardHeight;
         Tile tile1 = tiles[tile1x,tile1y];
         Tile tile2 = tiles[tile2x,tile2y];
-        Color tempColour = tile1.colour;
-        tile1.SetColour(tile2.colour);
-        tile2.SetColour(tempColour);
+        int tempType = tile1.type;
+        tile1.SetType(tile2.type);
+        tile2.SetType(tempType);
     }
     
     public void ColourTile(int tilex, int tiley, Color colour)
@@ -98,7 +99,7 @@ public class Board : MonoBehaviour
         return tiles[x,y];
     }
     
-    public void CreateBoard(int width, int height, Color[,] layout)
+    public void CreateBoard(int width, int height, int[,] layout)
     {
         if ((layout.GetLength(0) != width) || (layout.GetLength(1) != height))
         {
@@ -117,7 +118,8 @@ public class Board : MonoBehaviour
                 Tile t = Instantiate(tilePrefab, transform);
                 t.x = i;
                 t.y = j;
-                t.SetColour(layout[i,j]);
+                //t.SetColour(layout[i,j]);
+                t.SetType(layout[i,j]);
                 tiles[i,j] = t;
             }
 
@@ -128,25 +130,6 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*
-        Color[,] puzzle;
-        if (Random.Range(0,2) == 0)
-            puzzle = new Color[,]{
-                {Color.blue, Color.red, Color.green, Color.magenta},
-                {Color.blue, Color.magenta, Color.red, Color.green},
-                {Color.blue, Color.green, Color.red, Color.magenta},
-                {Color.blue, Color.red, Color.green, Color.magenta},
-            };
-        else
-            puzzle = new Color[,]{
-                {Color.green, Color.red, Color.green, Color.magenta},
-                {Color.blue, Color.magenta, Color.blue, Color.green},
-                {Color.blue, Color.green, Color.magenta, Color.magenta},
-                {Color.red, Color.red, Color.green, Color.magenta},
-            };
-        
-        CreateBoard(4,4, puzzle);
-        */
     }
 
     // Update is called once per frame

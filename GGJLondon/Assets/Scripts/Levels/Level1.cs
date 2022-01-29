@@ -21,18 +21,18 @@ public class Level1 : LevelManager
         // enable "storage image" child
         _board1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         
-        Color[,] puzzle1 = new Color[,]{
-                {Color.blue, Color.red, Color.green, Color.magenta},
-                {Color.blue, Color.magenta, Color.red, Color.green},
-                {Color.blue, Color.green, Color.red, Color.magenta},
-                {Color.blue, Color.red, Color.green, Color.magenta},
+        int[,] puzzle1 = new int[,]{
+                {3, 2, 1, 4},
+                {3, 4, 2, 1},
+                {3, 1, 2, 4},
+                {3, 2, 1, 4},
             };
 
-        Color[,] puzzle2 = new Color[,]{
-                {Color.green, Color.red, Color.green, Color.magenta},
-                {Color.blue, Color.magenta, Color.blue, Color.green},
-                {Color.blue, Color.green, Color.magenta, Color.magenta},
-                {Color.red, Color.red, Color.green, Color.magenta},
+        int[,] puzzle2 = new int[,]{
+                {1, 2, 1, 4},
+                {3, 4, 3, 1},
+                {3, 1, 4, 4},
+                {2, 2, 1, 4},
             };
         
         _board1.CreateBoard(4,4, puzzle1);

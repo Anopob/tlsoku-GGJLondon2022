@@ -90,9 +90,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b424bbaf632b8a7408fe181d586ec2ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileType: 0
   colour: {r: 0, g: 0, b: 0, a: 0}
   x: 0
   y: 0
+  elementSprites:
+  - {fileID: 21300000, guid: 341c430ca8c82cd43b5d062981ddea18, type: 3}
+  - {fileID: 21300000, guid: b2b8fc9dd3d287b4198ba04a126a7aa7, type: 3}
+  - {fileID: 21300000, guid: 92740d8d72e6b6f47ad908195905706a, type: 3}
+  - {fileID: 21300000, guid: c147486432334b542b536065bb254afc, type: 3}
+  - {fileID: 21300000, guid: 29321ae44a7643d459df6fda648c6c21, type: 3}
+  - {fileID: 21300000, guid: d835fb75f57dddf4694edf30e20cd8a7, type: 3}
 --- !u!114 &3247359304288877711
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,18 +6,38 @@ using UnityEngine.EventSystems;
 
 
 public class Tile : MonoBehaviour
-{
+{   
+    public int type;
     public Color colour;
     public int x,y = 0;    
     
+    public Sprite[] elementSprites;
+    
     private Image _image;
     private Outline _outline;
+    private Dictionary<int, Color> _tileTypeColours = new Dictionary<int, Color>()
+    {
+        {0, Color.white},
+        {1, Color.green},
+        {2, Color.red},
+        {3, Color.blue},
+        {4, Color.magenta},
+        {5, Color.yellow}        
+    };
+
     
     public void SetColour(Color c)
     {
         colour = c;
         _image.color =  c;
 
+    }
+    
+    public void SetType(int t)
+    {
+        type = t;
+        _image.sprite = elementSprites[type];
+        SetColour(_tileTypeColours[t]);
     }
  
     public void SetHighlight(bool on)

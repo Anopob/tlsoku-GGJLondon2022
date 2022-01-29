@@ -19,16 +19,16 @@ public class Tutorial : LevelManager
     {
         base.SetupBoards(boardPrefab);
 
-        Color[,] puzzle1 = new Color[,]{
-                {Color.red, Color.red, Color.blue},
-                {Color.red, Color.red, Color.blue},
-                {Color.blue, Color.red, Color.blue},
+        int[,] puzzle1 = new int[,]{
+                {2, 2, 3},
+                {2, 2, 3},
+                {3, 2, 3},
             };
 
-        Color[,] puzzle2 = new Color[,]{
-                {Color.red, Color.red, Color.blue},
-                {Color.red, Color.red, Color.red},
-                {Color.blue, Color.blue, Color.blue},
+        int[,] puzzle2 = new int[,]{
+                {2, 2, 3},
+                {2, 2, 2},
+                {3, 3, 3},
             };
 
         _board1.CreateBoard(3, 3, puzzle1);
