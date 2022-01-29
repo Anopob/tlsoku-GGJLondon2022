@@ -77,7 +77,7 @@ public class Board : MonoBehaviour
         return tiles[x,y];
     }
     
-    private void CreateBoard(int width, int height, Color[,] layout)
+    public void CreateBoard(int width, int height, Color[,] layout)
     {
         if ((layout.GetLength(0) != width) || (layout.GetLength(1) != height))
         {
@@ -107,6 +107,7 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*
         Color[,] puzzle;
         if (Random.Range(0,2) == 0)
             puzzle = new Color[,]{
@@ -124,6 +125,7 @@ public class Board : MonoBehaviour
             };
         
         CreateBoard(4,4, puzzle);
+        */
     }
 
     // Update is called once per frame

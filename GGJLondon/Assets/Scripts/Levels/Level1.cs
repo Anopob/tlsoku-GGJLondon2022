@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 public class Level1 : LevelManager
 {
@@ -10,6 +11,24 @@ public class Level1 : LevelManager
     {
         base.SetupBoards(boardPrefab);
         _board1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        
+        Color[,] puzzle1 = new Color[,]{
+                {Color.blue, Color.red, Color.green, Color.magenta},
+                {Color.blue, Color.magenta, Color.red, Color.green},
+                {Color.blue, Color.green, Color.red, Color.magenta},
+                {Color.blue, Color.red, Color.green, Color.magenta},
+            };
+
+        Color[,] puzzle2 = new Color[,]{
+                {Color.green, Color.red, Color.green, Color.magenta},
+                {Color.blue, Color.magenta, Color.blue, Color.green},
+                {Color.blue, Color.green, Color.magenta, Color.magenta},
+                {Color.red, Color.red, Color.green, Color.magenta},
+            };
+        
+        _board1.CreateBoard(4,4, puzzle1);
+        _board2.CreateBoard(4,4, puzzle2);
+        
     }
 
     public override void OnLeftClick(int x, int y)
