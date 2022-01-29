@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainMenuTheme: {fileID: 0}
-  _gameplayTheme: {fileID: 0}
+  _gameplayTheme: {fileID: 8300000, guid: 1a604e2803774374ea1706c0f6a99624, type: 3}
   _buttonClickClip: {fileID: 0}
   _invalidMoveClip: {fileID: 8300000, guid: d727d239c7a57ff4790a4e6fe082f93f, type: 3}
   _validMoveClip: {fileID: 8300000, guid: d3d3eb258fa55aa4d9ec486156cd0d4c, type: 3}
