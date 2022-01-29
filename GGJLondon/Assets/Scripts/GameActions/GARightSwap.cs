@@ -18,6 +18,6 @@ public class GARightSwap : GameAction
 
     public override void Undo()
     {
-        _board.SwapTiles(_x, _y, _x + 1, _y + 1);
+        _board.SwapTiles(_x, _y, _x, _y + 1);
     }
 }

@@ -8,10 +8,16 @@ public abstract class LevelManager : MonoBehaviour
     protected Stack<GameAction> _board1Actions = new Stack<GameAction>();
     protected Stack<GameAction> _board2Actions = new Stack<GameAction>();
 
-    public void OnUndoClick()
+    private void PerformUndo()
     {
+        if (_board1Actions.Count ==  0) return;
         _board1Actions.Pop().Undo();
         _board2Actions.Pop().Undo();
+    }
+
+    public void OnUndoClick()
+    {
+        PerformUndo();
     }
 
     public void OnRedoClick()
@@ -66,5 +72,18 @@ public abstract class LevelManager : MonoBehaviour
     {
         _board1.SetHighlight(data[0], data[1], false);
         _board2.SetHighlight(data[0], data[1], false);
+    }
+    
+    public void InvalidMove()
+    {
+        PerformUndo();
+    }
+    
+    void Update()
+    {
+        if (Input.GetKeyDown("r"))
+        {
+            PerformUndo();
+        }
     }
 }

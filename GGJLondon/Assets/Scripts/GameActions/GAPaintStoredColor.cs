@@ -21,5 +21,6 @@ public class GAPaintStoredColor : GameAction
 
     public override void Undo()
     {
+        _board.GetTile(_x, _y).SetColour(_oldColor);
     }
 }
