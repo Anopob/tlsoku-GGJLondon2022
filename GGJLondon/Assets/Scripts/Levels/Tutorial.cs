@@ -7,6 +7,14 @@ using UnityEngine;
 
 public class Tutorial : LevelManager
 {
+    public override string LeftBoardLeftClickInstructions => _GAToInstructions[typeof(GAShiftLeft)];
+
+    public override string LeftBoardRightClickInstructions => _GAToInstructions[typeof(GABlank)];
+
+    public override string RightBoardLeftClickIntructions => _GAToInstructions[typeof(GABlank)];
+
+    public override string RightBoardRightClickIntructions => _GAToInstructions[typeof(GARightSwap)];
+
     public override void SetupBoards(Board boardPrefab)
     {
         base.SetupBoards(boardPrefab);

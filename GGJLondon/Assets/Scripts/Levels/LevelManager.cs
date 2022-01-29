@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,11 @@ public abstract class LevelManager : MonoBehaviour
     protected Stack<GameAction> _board2Actions = new Stack<GameAction>();
 
     protected AudioController _audioController;
+
+    public abstract string LeftBoardLeftClickInstructions { get; }
+    public abstract string LeftBoardRightClickInstructions { get; }
+    public abstract string RightBoardLeftClickIntructions { get; }
+    public abstract string RightBoardRightClickIntructions { get; }
 
     protected void UndoInvalidAction()
     {
@@ -84,7 +90,23 @@ public abstract class LevelManager : MonoBehaviour
     {
         PerformUndo();
     }
-    
+
+    protected Dictionary<Type, string> _GAToInstructions = new Dictionary<Type, string>();
+    private void Awake()
+    {
+        _GAToInstructions[typeof(GABlank)] = "N/A";
+
+        _GAToInstructions[typeof(GARightSwap)] = "Swap the selected tile with the tile to the right of it.";
+        _GAToInstructions[typeof(GADownSwap)] = "Swap the selected tile with the tile below it.";
+
+        _GAToInstructions[typeof(GAShiftLeft)] = "Shift the entire selected row to the left.";
+
+        _GAToInstructions[typeof(GAStoreColor)] = "Store the selected tile's color.";
+        _GAToInstructions[typeof(GAPaintStoredColor)] = "Paint the stored color onto the selected tile.";
+
+        _GAToInstructions[typeof(GAPaintColor)] = "Paint the selected tile a specific color.";
+    }
+
     void Start()
     {
         _audioController = FindObjectOfType<AudioController>();
