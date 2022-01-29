@@ -11,9 +11,10 @@ public class GADownSwap : GameAction
     {
     }
 
-    public override void Redo()
+    public override bool Redo()
     {
         _board.SwapTiles(_x, _y, _x + 1, _y );
+        return true;
     }
 
     public override void Undo()

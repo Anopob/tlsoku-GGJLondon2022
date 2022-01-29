@@ -13,10 +13,12 @@ public class GAPaintStoredColor : GameAction
     {
     }
 
-    public override void Redo()
+    public override bool Redo()
     {
+        
         _oldColor = _board.GetTile(_x, _y).colour;
         _board.ColourTile(_x, _y, _board.storedColour);
+        return (_oldColor != _board.storedColour);
     }
 
     public override void Undo()

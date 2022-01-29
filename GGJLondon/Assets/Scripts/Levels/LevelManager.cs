@@ -8,6 +8,11 @@ public abstract class LevelManager : MonoBehaviour
     protected Stack<GameAction> _board1Actions = new Stack<GameAction>();
     protected Stack<GameAction> _board2Actions = new Stack<GameAction>();
 
+    protected void UndoInvalidAction()
+    {
+        PerformUndo();
+    }
+
     private void PerformUndo()
     {
         if (_board1Actions.Count ==  0) return;

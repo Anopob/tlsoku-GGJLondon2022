@@ -7,7 +7,7 @@ public abstract class GameAction
     protected int _x, _y;
     protected Board _board;
 
-    public abstract void Redo();
+    public abstract bool Redo();
     public abstract void Undo();
 
     public GameAction(int x, int y, Board board)

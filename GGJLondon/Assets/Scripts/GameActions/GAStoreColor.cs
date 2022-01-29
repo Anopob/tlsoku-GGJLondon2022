@@ -12,9 +12,11 @@ public class GAStoreColor : GameAction
     {
     }
 
-    public override void Redo()
+    public override bool Redo()
     {
-        _oldColor = _board.StoreColour(_board.GetTile(_x, _y).colour);
+        Color storageColour  = _board.GetTile(_x, _y).colour;
+        _oldColor = _board.StoreColour(storageColour);
+        return (_oldColor != storageColour);
     }
 
     public override void Undo()

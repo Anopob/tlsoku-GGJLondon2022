@@ -9,18 +9,22 @@ public class Level1 : LevelManager
     public override void OnLeftClick(int x, int y)
     {
         _board1Actions.Push(new GAStoreColor(x, y, _board1));
-        _board1Actions.Peek().Redo();
+        bool board1Result = _board1Actions.Peek().Redo();
         _board2Actions.Push(new GARightSwap(x, y, _board2));
-        _board2Actions.Peek().Redo();
+        bool board2Result = _board2Actions.Peek().Redo();
+        if (!(board1Result && board2Result))
+            UndoInvalidAction();
         CheckEndOfGame();
     }
 
     public override void OnRightClick(int x, int y)
     {
         _board1Actions.Push(new GAPaintStoredColor(x, y, _board1));
-        _board1Actions.Peek().Redo();
+        bool board1Result = _board1Actions.Peek().Redo();
         _board2Actions.Push(new GADownSwap(x, y, _board2));
-        _board2Actions.Peek().Redo();
+        bool board2Result = _board2Actions.Peek().Redo();
+        if (!(board1Result && board2Result))
+            UndoInvalidAction();
         CheckEndOfGame();
     }
 }

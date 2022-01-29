@@ -11,9 +11,10 @@ public class GARightSwap : GameAction
     {
     }
 
-    public override void Redo()
+    public override bool Redo()
     {
         _board.SwapTiles(_x, _y, _x, _y + 1);
+        return true;
     }
 
     public override void Undo()

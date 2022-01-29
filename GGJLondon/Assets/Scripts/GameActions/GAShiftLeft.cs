@@ -11,9 +11,10 @@ public class GAShiftLeft : GameAction
     {
     }
 
-    public override void Redo()
+    public override bool Redo()
     {
         _board.ShiftRowLeft(_y);
+        return true;
     }
 
     public override void Undo()
