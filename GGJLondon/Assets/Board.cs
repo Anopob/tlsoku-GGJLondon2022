@@ -19,28 +19,26 @@ public class Board : MonoBehaviour
 
     public void ShiftRowLeft(int row)
     {
-        row = row % boardHeight;
         Color temp = tiles[0, row].colour;
 
         for (int i = 0; i < tiles.GetLength(1) - 1; i++)
         {
-            tiles[i % boardWidth, row].SetColour(tiles[(i + 1) % boardWidth, row].colour);
+            tiles[i, row].SetColour(tiles[i + 1, row].colour);
         }
 
-        tiles[(tiles.GetLength(0) - 1) % boardWidth, row].SetColour(temp);
+        tiles[tiles.GetLength(0) - 1, row].SetColour(temp);
     }
 
     public void ShiftRowRight(int row)
     {
-        row = row % boardHeight;
-        Color temp = tiles[(tiles.GetLength(0) - 1) % boardWidth, row].colour;
+        Color temp = tiles[tiles.GetLength(0) - 1, row].colour;
+
+        for (int i = tiles.GetLength(1) - 1; i > 0; i--)
+        {
+            tiles[i, row].SetColour(tiles[i - 1, row].colour);
+        }
 
         tiles[0, row].SetColour(temp);
-
-        for (int i = 1; i < tiles.GetLength(1); i++)
-        {
-            tiles[i % boardWidth, row].SetColour(tiles[(i - 1) % boardWidth, row].colour);
-        }
     }
 
     public void SwapTiles(int tile1x, int tile1y, int tile2x, int tile2y)
