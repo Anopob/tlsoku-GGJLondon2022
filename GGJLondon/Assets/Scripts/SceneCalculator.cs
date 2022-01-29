@@ -15,7 +15,6 @@ public class SceneCalculator : MonoBehaviour
     [SerializeField]
     private AudioController _audioController;
 
-    public Dictionary<int, string> LevelNumberToName = new Dictionary<int, string>();
     private Dictionary<int, Type> _levelNumberToScript = new Dictionary<int, Type>();
     private static SceneCalculator _instance;
     private int _level = -1;
@@ -37,9 +36,6 @@ public class SceneCalculator : MonoBehaviour
 
     private void Start()
     {
-        LevelNumberToName.Add(0, "GameScene");
-        LevelNumberToName.Add(1, "GameScene");
-
         _levelNumberToScript.Add(0, typeof(Tutorial));
         _levelNumberToScript.Add(1, typeof(Level2));
         _levelNumberToScript.Add(10, typeof(Level1));
@@ -68,16 +64,9 @@ public class SceneCalculator : MonoBehaviour
 
     public void GoToLevelNumber(int index)
     {
-        if (LevelNumberToName.ContainsKey(index))
-        {
-            _level = index;
-            ClickAsync(LevelNumberToName[index]);
-            _audioController.PlayGameplayMusic();
-        }
-        else
-        {
-            Debug.Log("HEY NO LEVEL : " + index);
-        }
+        _level = index;
+        ClickAsync("GameScene");
+        _audioController.PlayGameplayMusic();
     }
 
     public void GoToLevelSelect()
