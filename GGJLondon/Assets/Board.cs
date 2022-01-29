@@ -101,6 +101,11 @@ public class Board : MonoBehaviour
         Tile tile = tiles[tilex,tiley];
         tile.SetType(type);
     }
+
+    public void CycleTileType(int x, int y, bool forward, int size)
+    {
+        tiles[x, y].CycleType(forward, size);
+    }
     
     // Stores a type for painting, returns the old colour
     public int StoreType(int type)

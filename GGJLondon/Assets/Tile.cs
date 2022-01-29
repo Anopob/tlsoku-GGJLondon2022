@@ -15,7 +15,7 @@ public class Tile : MonoBehaviour
     
     private Image _image;
     private Outline _outline;
-    private Dictionary<int, Color> _tileTypeColours = new Dictionary<int, Color>()
+    private static readonly Dictionary<int, Color> _tileTypeColours = new Dictionary<int, Color>()
     {
         {0, Color.white},
         {1, Color.green},
@@ -24,8 +24,8 @@ public class Tile : MonoBehaviour
         {4, Color.magenta},
         {5, Color.yellow}        
     };
+    public const int NUMBER_OF_TILE_TYPES = 6;
 
-    
     public void SetColour(Color c)
     {
         colour = c;
@@ -38,6 +38,15 @@ public class Tile : MonoBehaviour
         type = t;
         _image.sprite = elementSprites[type];
         SetColour(_tileTypeColours[t]);
+    }
+
+    public void CycleType(bool forward, int size)
+    {
+        int direction = forward ? 1 : -1;
+        int newType = type += direction;
+        if (newType < 0)
+            newType = size - 1;
+        SetType(newType % size);
     }
  
     public void SetHighlight(bool on)
