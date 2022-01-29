@@ -38,17 +38,9 @@ public class SceneCalculator : MonoBehaviour
     private void Start()
     {
         LevelNumberToName.Add(0, "GameScene");
-        LevelNumberToName.Add(1, "Level1");
-        LevelNumberToName.Add(2, "Level2");
-        LevelNumberToName.Add(3, "Level3");
-        LevelNumberToName.Add(4, "Level4");
-        LevelNumberToName.Add(5, "Level5");
-        LevelNumberToName.Add(6, "Level6");
-        LevelNumberToName.Add(7, "Level7");
-        LevelNumberToName.Add(8, "Level8");
-        LevelNumberToName.Add(9, "Level9");
 
-        _levelNumberToScript.Add(0, typeof(Level1));
+        _levelNumberToScript.Add(0, typeof(Tutorial));
+        _levelNumberToScript.Add(10, typeof(Level1));
     }
 
     public void StartNewGame()
