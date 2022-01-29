@@ -51,12 +51,10 @@ public class Tile : MonoBehaviour
         if (pointerEventData.button == PointerEventData.InputButton.Left )
         {
             SendMessageUpwards("TileLeftClick", new Vector2Int(x,y));
-            Debug.Log("Left Click");
         }
         if (pointerEventData.button == PointerEventData.InputButton.Right )
         {
             SendMessageUpwards("TileRightClick", new Vector2Int(x,y));
-            Debug.Log("Right Click");
         }
         
     }

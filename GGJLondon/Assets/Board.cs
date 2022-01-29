@@ -66,8 +66,6 @@ public class Board : MonoBehaviour
 
     public void SwapTiles(int tile1x, int tile1y, int tile2x, int tile2y)
     {
-        Debug.Log("Swapping Tiles");
-        
         tile1x = tile1x % boardWidth;
         tile1y = tile1y % boardHeight;
         tile2x = tile2x % boardWidth;
