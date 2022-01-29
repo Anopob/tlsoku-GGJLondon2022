@@ -44,7 +44,7 @@ public class SceneCalculator : MonoBehaviour
 
     public void StartNewGame()
     {
-        GoToLevelNumber(2);
+        GoToLevelSelect();
     }
 
     public void JustBeatLevel()
