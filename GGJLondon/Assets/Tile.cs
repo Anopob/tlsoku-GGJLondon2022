@@ -20,7 +20,7 @@ public class Tile : MonoBehaviour
 
     }
  
-    void SetHighlight(bool on)
+    public void SetHighlight(bool on)
     {
         if (on)
         {
@@ -36,12 +36,12 @@ public class Tile : MonoBehaviour
  
     public void MouseIn()
     {
-        SetHighlight(true);
+        SendMessageUpwards(nameof(LevelManager.TileHighlightOn), new Vector2Int(x, y));
     }
 
     public void MouseOut()
     {
-        SetHighlight(false);
+        SendMessageUpwards(nameof(LevelManager.TileHighlightOff), new Vector2Int(x, y));
     }
     
     public void MouseClicked(BaseEventData e)

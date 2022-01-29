@@ -55,4 +55,16 @@ public abstract class LevelManager : MonoBehaviour
         Debug.Log("Manager sees right click");
         OnRightClick(data[0], data[1]);
     }
+
+    public void TileHighlightOn(Vector2Int data)
+    {
+        _board1.SetHighlight(data[0], data[1], true);
+        _board2.SetHighlight(data[0], data[1], true);
+    }
+
+    public void TileHighlightOff(Vector2Int data)
+    {
+        _board1.SetHighlight(data[0], data[1], false);
+        _board2.SetHighlight(data[0], data[1], false);
+    }
 }

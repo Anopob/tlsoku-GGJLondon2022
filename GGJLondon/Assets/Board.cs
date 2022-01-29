@@ -12,6 +12,11 @@ public class Board : MonoBehaviour
     public Color storedColour;
     private int boardWidth, boardHeight;
 
+    public void SetHighlight(int x, int y, bool isHighlightOn)
+    {
+        tiles[x, y].SetHighlight(isHighlightOn);
+    }
+
     public void SwapTiles(int tile1x, int tile1y, int tile2x, int tile2y)
     {
         Debug.Log("Swapping Tiles");
