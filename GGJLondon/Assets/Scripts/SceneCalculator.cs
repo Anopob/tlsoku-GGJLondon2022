@@ -36,7 +36,7 @@ public class SceneCalculator : MonoBehaviour
 
     private void Start()
     {
-        LevelNumberToName.Add(0, "Tutorial");
+        LevelNumberToName.Add(0, "GameScene");
         LevelNumberToName.Add(1, "Level1");
         LevelNumberToName.Add(2, "Level2");
         LevelNumberToName.Add(3, "Level3");
