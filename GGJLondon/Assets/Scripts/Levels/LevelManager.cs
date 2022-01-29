@@ -8,9 +8,12 @@ public abstract class LevelManager : MonoBehaviour
     protected Stack<GameAction> _board1Actions = new Stack<GameAction>();
     protected Stack<GameAction> _board2Actions = new Stack<GameAction>();
 
+    protected AudioController _audioController;
+
     protected void UndoInvalidAction()
     {
         PerformUndo();
+        _audioController.PlayInvalidMoveClip();
     }
 
     private void PerformUndo()
@@ -82,6 +85,11 @@ public abstract class LevelManager : MonoBehaviour
     public void InvalidMove()
     {
         PerformUndo();
+    }
+    
+    void Start()
+    {
+        _audioController = FindObjectOfType<AudioController>();
     }
     
     void Update()

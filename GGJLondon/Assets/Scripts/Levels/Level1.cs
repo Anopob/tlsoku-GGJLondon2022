@@ -14,7 +14,11 @@ public class Level1 : LevelManager
         bool board2Result = _board2Actions.Peek().Redo();
         if (!(board1Result && board2Result))
             UndoInvalidAction();
-        CheckEndOfGame();
+        else
+        {
+            _audioController.PlayValidMoveClip();
+            CheckEndOfGame();
+        }
     }
 
     public override void OnRightClick(int x, int y)
@@ -25,6 +29,10 @@ public class Level1 : LevelManager
         bool board2Result = _board2Actions.Peek().Redo();
         if (!(board1Result && board2Result))
             UndoInvalidAction();
-        CheckEndOfGame();
+        else
+        {
+            _audioController.PlayValidMoveClip();
+            CheckEndOfGame();
+        }
     }
 }

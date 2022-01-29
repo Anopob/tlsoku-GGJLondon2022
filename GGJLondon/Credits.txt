@@ -1,6 +1,7 @@
 
 
-
+Move sound effect by NenadSimic
+https://opengameart.org/content/menu-selection-click
 
 Invalid move sound effect by dklon
 https://opengameart.org/content/gonk-gong
