@@ -14,6 +14,7 @@ public class Tile : MonoBehaviour
     public Sprite[] elementSprites;
     
     private Image _image;
+    private Image _icon;
     private Outline _outline;
     private static readonly Dictionary<int, Color> _tileTypeColours = new Dictionary<int, Color>()
     {
@@ -29,14 +30,14 @@ public class Tile : MonoBehaviour
     public void SetColour(Color c)
     {
         colour = c;
-        _image.color =  c;
+        _icon.color =  c;
 
     }
     
     public void SetType(int t)
     {
         type = t;
-        _image.sprite = elementSprites[type];
+        _icon.sprite = elementSprites[type];
         SetColour(_tileTypeColours[t]);
     }
 
@@ -92,6 +93,7 @@ public class Tile : MonoBehaviour
     void Awake()
     {
         _image = GetComponent<Image>();
+        _icon = transform.GetChild(0).GetComponent<Image>();
         _outline = GetComponent<Outline>();
     }
 
