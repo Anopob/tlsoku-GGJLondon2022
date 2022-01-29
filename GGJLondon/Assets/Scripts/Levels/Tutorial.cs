@@ -13,22 +13,22 @@ public class Tutorial : LevelManager
 
     public override string RightBoardLeftClickIntructions => _GAToInstructions[typeof(GABlank)];
 
-    public override string RightBoardRightClickIntructions => _GAToInstructions[typeof(GARightSwap)];
+    public override string RightBoardRightClickIntructions => _GAToInstructions[typeof(GAShiftUp)];
 
     public override void SetupBoards(Board boardPrefab)
     {
         base.SetupBoards(boardPrefab);
 
         Color[,] puzzle1 = new Color[,]{
-                {Color.red, Color.green, Color.blue},
-                {Color.green, Color.red, Color.blue},
-                {Color.blue, Color.red, Color.green},
+                {Color.red, Color.red, Color.blue},
+                {Color.red, Color.red, Color.blue},
+                {Color.blue, Color.red, Color.blue},
             };
 
         Color[,] puzzle2 = new Color[,]{
-                {Color.green, Color.red, Color.blue},
-                {Color.red, Color.blue, Color.green},
-                {Color.blue, Color.green, Color.red},
+                {Color.red, Color.red, Color.blue},
+                {Color.red, Color.red, Color.red},
+                {Color.blue, Color.blue, Color.blue},
             };
 
         _board1.CreateBoard(3, 3, puzzle1);
@@ -55,7 +55,7 @@ public class Tutorial : LevelManager
     {
         _board1Actions.Push(new GABlank(x, y, _board1));
         bool board1Result = _board1Actions.Peek().Redo();
-        _board2Actions.Push(new GARightSwap(x, y, _board2));
+        _board2Actions.Push(new GAShiftUp(x, y, _board2));
         bool board2Result = _board2Actions.Peek().Redo();
         if (!(board1Result && board2Result))
             UndoInvalidAction();
