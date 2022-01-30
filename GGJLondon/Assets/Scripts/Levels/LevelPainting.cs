@@ -11,7 +11,7 @@ public class LevelPainting : LevelManager
 
     public override string LeftBoardRightClickInstructions => _GAToInstructions[typeof(GAPaintStoredColor)];
 
-    public override string RightBoardLeftClickIntructions => _GAToInstructions[typeof(GAPaintStoredColor)];
+    public override string RightBoardLeftClickIntructions => _GAToInstructions[typeof(GARightSwap)];
 
     public override string RightBoardRightClickIntructions => _GAToInstructions[typeof(GAStoreColor)];
 
@@ -22,8 +22,8 @@ public class LevelPainting : LevelManager
         // enable "storage image" child
         _board1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         _board2.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        _board1.StoreType(4);
-        _board2.StoreType(4);
+        _board1.StoreType(3);
+        _board2.StoreType(2);
 
         int[,] puzzle1 = new int[,]{
                 {1, 1, 3},
@@ -33,8 +33,8 @@ public class LevelPainting : LevelManager
 
         int[,] puzzle2 = new int[,]{
                 {3, 2, 3},
-                {1, 1, 1},
-                {3, 1, 3},
+                {2, 2, 1},
+                {3, 1, 2},
             };
 
         _board1.CreateBoard(3, 3, puzzle1);
@@ -46,7 +46,7 @@ public class LevelPainting : LevelManager
     public override void OnLeftClick(int x, int y)
     {
         _board1Actions.Push(new GAStoreColor(x, y, _board1));
-        _board2Actions.Push(new GAPaintStoredColor(x, y, _board2));
+        _board2Actions.Push(new GARightSwap(x, y, _board2));
         PerformMove();
     }
 

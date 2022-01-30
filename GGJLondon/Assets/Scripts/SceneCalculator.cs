@@ -44,13 +44,12 @@ public class SceneCalculator : MonoBehaviour
         // NEED LEVEL 5
         _levelNumberToScript.Add(6, typeof(LevelSliding));
 
-        _levelNumberToScript.Add(7, typeof(Level2)); //THIS LEVEL IS IMPOSSIBLE
-        _levelNumberToScript.Add(8, typeof(LevelWaterFire));
-        _levelNumberToScript.Add(9, typeof(LevelSwapping));
+        // NEED LEVEL 7
+        _levelNumberToScript.Add(8, typeof(Level2)); //THIS LEVEL IS IMPOSSIBLE
+        _levelNumberToScript.Add(9, typeof(LevelWaterFire));
 
-
-        // NEED LEVEL 10
-        _levelNumberToScript.Add(11, typeof(LevelPainting)); //This level might be impossible
+        _levelNumberToScript.Add(10, typeof(LevelSwapping));
+        _levelNumberToScript.Add(11, typeof(LevelPainting));
         _levelNumberToScript.Add(12, typeof(Level1));
     }
 
