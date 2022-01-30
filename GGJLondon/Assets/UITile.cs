@@ -23,6 +23,18 @@ public class UITile : Tile
         _sceneCalculator.GoToLevelNumber(levelNumber);
     }
  
+    public void MenuMouseClicked()
+    {
+        Debug.Log(levelNumber);
+        if(levelNumber == 1)
+            _sceneCalculator.StartNewGame();
+        if(levelNumber == 2)
+            _sceneCalculator.GoToLevelSelect();
+        if(levelNumber == 3)
+            _sceneCalculator.StartNewGame();
+        if(levelNumber == 4)
+            _sceneCalculator.StartNewGame();
+    }
     
     // Start is called before the first frame update
     void Start()
