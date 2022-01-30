@@ -62,7 +62,7 @@ public abstract class LevelManager : MonoBehaviour
         if (IsPlayerVictorious())
         {
             VictoryPanel.VictoryIsAchieved();
-            undoButton.gameObject.SetActive(false);
+            undoButton.gameObject.transform.parent.gameObject.SetActive(false);
         }
     }
 
