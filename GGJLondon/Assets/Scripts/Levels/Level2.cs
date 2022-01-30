@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Level2 : LevelManager
 {
-    public override string LeftBoardLeftClickInstructions => _GAToInstructions[typeof(GAPaintColor)];
+    public override string LeftBoardLeftClickInstructions => _GAToInstructions[typeof(GAPaintStoredColor)];
 
     public override string LeftBoardRightClickInstructions => _GAToInstructions[typeof(GABlank)];
 
@@ -17,6 +17,10 @@ public class Level2 : LevelManager
 
     public override void SetupBoards(Board boardPrefab)
     {
+        
+        _board1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        _board1.StoreType(1);
+        
         base.SetupBoards(boardPrefab);
         
         int[,] puzzle1 = new int[,]{
@@ -40,7 +44,7 @@ public class Level2 : LevelManager
 
     public override void OnLeftClick(int x, int y)
     {
-        _board1Actions.Push(new GAPaintColor(x, y, _board1, 1));
+        _board1Actions.Push(new GAPaintStoredColor(x, y, _board1));
         _board2Actions.Push(new GADownSwap(x, y, _board2));
         PerformMove();
     }

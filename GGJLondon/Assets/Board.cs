@@ -112,7 +112,7 @@ public class Board : MonoBehaviour
     {
         int temp = storedType;
         storedType = type;
-//        storageDisplay.color = colour;
+        storageDisplay.color = Tile._tileTypeColours[type];
         return temp;
         
     }

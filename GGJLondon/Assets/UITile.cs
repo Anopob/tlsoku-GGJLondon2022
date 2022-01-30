@@ -10,12 +10,12 @@ public class UITile : Tile
 
     new public void MouseIn()
     {
-        //SendMessageUpwards(nameof(LevelManager.TileHighlightOn), new Vector2Int(x, y));
+        SetHighlight(true);
     }
 
     new public void MouseOut()
     {
-        //SendMessageUpwards(nameof(LevelManager.TileHighlightOff), new Vector2Int(x, y));
+        SetHighlight(false);
     }
     
     public void MouseClicked()

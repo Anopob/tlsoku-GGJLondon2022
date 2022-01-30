@@ -121,8 +121,6 @@ public abstract class LevelManager : MonoBehaviour
         _GAToInstructions[typeof(GAStoreColor)] = "Store the selected tile's color.";
         _GAToInstructions[typeof(GAPaintStoredColor)] = "Paint the stored color onto the selected tile.";
 
-        _GAToInstructions[typeof(GAPaintColor)] = "Paint the selected tile a specific color.";
-
         _GAToInstructions[typeof(GACycle)] = "Cycle the selected tile's type.";
     }
 

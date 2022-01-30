@@ -22,7 +22,8 @@ public class LevelPainting : LevelManager
         // enable "storage image" child
         _board1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         _board2.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-
+        _board1.StoreType(4);
+        _board2.StoreType(4);
 
         int[,] puzzle1 = new int[,]{
                 {1, 1, 4},

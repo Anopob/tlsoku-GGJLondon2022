@@ -20,6 +20,7 @@ public class Level1 : LevelManager
         base.SetupBoards(boardPrefab);
         // enable "storage image" child
         _board1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        _board1.StoreType(3);
         
         int[,] puzzle1 = new int[,]{
                 {3, 2, 1, 4},

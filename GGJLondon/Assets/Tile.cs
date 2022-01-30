@@ -16,7 +16,7 @@ public class Tile : MonoBehaviour
     private Image _image;
     private Image _icon;
     private Outline _outline;
-    private static readonly Dictionary<int, Color> _tileTypeColours = new Dictionary<int, Color>()
+    public static readonly Dictionary<int, Color> _tileTypeColours = new Dictionary<int, Color>()
     {
         {0, Color.white},
         {1, Color.green},
