@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7de9638b5e880945ae0c1d6a1d77602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainMenuTheme: {fileID: 0}
-  _gameplayTheme: {fileID: 8300000, guid: 1a604e2803774374ea1706c0f6a99624, type: 3}
+  _mainTheme: {fileID: 8300000, guid: 1a604e2803774374ea1706c0f6a99624, type: 3}
   _buttonClickClip: {fileID: 0}
   _invalidMoveClip: {fileID: 8300000, guid: d727d239c7a57ff4790a4e6fe082f93f, type: 3}
   _validMoveClip: {fileID: 8300000, guid: d3d3eb258fa55aa4d9ec486156cd0d4c, type: 3}
@@ -60,9 +59,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1a604e2803774374ea1706c0f6a99624, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0

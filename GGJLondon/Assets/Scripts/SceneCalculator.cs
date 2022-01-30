@@ -52,8 +52,6 @@ public class SceneCalculator : MonoBehaviour
         // NEED LEVEL 10
         _levelNumberToScript.Add(11, typeof(LevelPainting)); //This level might be impossible
         _levelNumberToScript.Add(12, typeof(Level1));
-        _audioController.PlayGameplayMusic();
-
     }
 
     public void StartNewGame()
@@ -81,7 +79,7 @@ public class SceneCalculator : MonoBehaviour
     {
         _level = index;
         ClickAsync("GameScene");
-        _audioController.PlayGameplayMusic();
+        _audioController.PlayMainTheme();
     }
 
     public void GoToLevelSelect()
