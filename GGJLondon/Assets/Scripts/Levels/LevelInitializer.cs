@@ -13,6 +13,8 @@ namespace Assets.Scripts.Levels
         private SceneCalculator _sceneCalculator;
         private UndoGameAction _undo;
         [SerializeField]
+        private VictoryPanel _victoryPanel;
+        [SerializeField]
         private Board _boardPrefab;
 
         private TextMeshProUGUI[] _instructions = new TextMeshProUGUI[4];
@@ -21,12 +23,14 @@ namespace Assets.Scripts.Levels
         {
             _sceneCalculator = FindObjectOfType<SceneCalculator>();
             _instructions = GetComponentsInChildren<TextMeshProUGUI>();
+            _victoryPanel.SceneCalculator = _sceneCalculator;
         }
 
         private void Start()
         {
             LevelManager manager = (LevelManager)gameObject.AddComponent(_sceneCalculator.GetLevelScript());
             manager.SetupBoards(_boardPrefab);
+            manager.VictoryPanel = _victoryPanel;
 
             _instructions[0].text += manager.LeftBoardLeftClickInstructions;
             _instructions[1].text += manager.LeftBoardRightClickInstructions;

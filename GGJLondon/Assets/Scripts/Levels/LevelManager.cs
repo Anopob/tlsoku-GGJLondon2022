@@ -13,6 +13,8 @@ public abstract class LevelManager : MonoBehaviour
 
     protected AudioController _audioController;
 
+    public VictoryPanel VictoryPanel { get; set; }
+
     public abstract string LeftBoardLeftClickInstructions { get; }
     public abstract string LeftBoardRightClickInstructions { get; }
     public abstract string RightBoardLeftClickIntructions { get; }
@@ -58,8 +60,7 @@ public abstract class LevelManager : MonoBehaviour
     {
         if (IsPlayerVictorious())
         {
-            Debug.Log("Victory!");
-            _sceneCalculator.GoToLevelSelect();
+            VictoryPanel.VictoryIsAchieved();
         }
     }
 
