@@ -71,7 +71,10 @@ public class SceneCalculator : MonoBehaviour
 
     public void GoToNextLevel()
     {
-        GoToLevelNumber(_level + 1);
+        if (_level == 12)
+            GoToMainMenu();
+        else
+            GoToLevelNumber(_level + 1);
     }
 
     public void GoToLevelNumber(int index)
