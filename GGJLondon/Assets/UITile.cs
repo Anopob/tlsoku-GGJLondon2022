@@ -21,7 +21,8 @@ public class UITile : Tile
     
     public void MouseClicked()
     {
-        _sceneCalculator.GoToLevelNumber(levelNumber - 1);
+        Debug.Log(levelNumber);
+        _sceneCalculator.GoToLevelNumber(levelNumber);
         _audioController.PlayButtonClickClip();
     }
  

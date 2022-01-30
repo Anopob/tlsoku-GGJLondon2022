@@ -36,23 +36,21 @@ public class SceneCalculator : MonoBehaviour
 
     private void Start()
     {
-        _levelNumberToScript.Add(0, typeof(Levelabc));
-        _levelNumberToScript.Add(1, typeof(Tutorial3));
-
-        _levelNumberToScript.Add(2, typeof(Tutorial1));
-        _levelNumberToScript.Add(3, typeof(Tutorial2));
+        _levelNumberToScript.Add(1, typeof(Levelabc));
+        _levelNumberToScript.Add(2, typeof(Tutorial3));
+        _levelNumberToScript.Add(3, typeof(Tutorial1));
         
-        
-        // NEED LEVEL 5
-        _levelNumberToScript.Add(5, typeof(LevelSliding));
+        _levelNumberToScript.Add(4, typeof(Tutorial2));
+        _levelNumberToScript.Add(5, typeof(LevelQuiteEasy));
+        _levelNumberToScript.Add(6, typeof(LevelSliding));
 
-        // NEED LEVEL 7
-        _levelNumberToScript.Add(7, typeof(Level2)); //THIS LEVEL IS IMPOSSIBLE
-        _levelNumberToScript.Add(8, typeof(LevelWaterFire));
+        _levelNumberToScript.Add(7, typeof(LevelSpaceTime));
+        _levelNumberToScript.Add(8, typeof(Level2));
+        _levelNumberToScript.Add(9, typeof(LevelWaterFire));
 
-        _levelNumberToScript.Add(9, typeof(LevelSwapping));
-        _levelNumberToScript.Add(10, typeof(LevelPainting));
-        _levelNumberToScript.Add(11, typeof(Level1));
+        _levelNumberToScript.Add(10, typeof(LevelSwapping));
+        _levelNumberToScript.Add(11, typeof(LevelPainting));
+        _levelNumberToScript.Add(12, typeof(Level1));
     }
 
     public void StartNewGame()

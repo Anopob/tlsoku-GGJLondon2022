@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Level2 : LevelManager
+public class LevelSpaceTime : LevelManager
 {
-    public override string LeftBoardLeftClickInstructions => _GAToInstructions[typeof(GAPaintStoredColor)];
+    public override string LeftBoardLeftClickInstructions => _GAToInstructions[typeof(GAShiftUp)];
 
-    public override string LeftBoardRightClickInstructions => _GAToInstructions[typeof(GABlank)];
+    public override string LeftBoardRightClickInstructions => _GAToInstructions[typeof(GAShiftUp)];
 
     public override string RightBoardLeftClickIntructions => _GAToInstructions[typeof(GADownSwap)];
 
@@ -17,23 +17,21 @@ public class Level2 : LevelManager
 
     public override void SetupBoards(Board boardPrefab)
     {
+                
         base.SetupBoards(boardPrefab);
         
-        _board1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        _board1.StoreType(1);
-                
         int[,] puzzle1 = new int[,]{
-                {3, 2, 3, 3},
-                {2, 3, 3, 3},
-                {3, 3, 3, 3},
-                {3, 3, 2, 2},
+                {5, 5, 5, 5},
+                {5, 2, 2, 5},
+                {4, 4, 4, 4},
+                {4, 4, 4, 4},
             };
 
         int[,] puzzle2 = new int[,]{
-                {1, 1, 1, 3},
-                {1, 3, 3, 1},
-                {3, 1, 1, 3},
-                {2, 2, 2, 2},
+                {4, 5, 4, 2},
+                {5, 4, 5, 4},
+                {4, 5, 4, 5},
+                {2, 4, 5, 4},
             };
         
         _board1.CreateBoard(4,4, puzzle1);
@@ -43,14 +41,14 @@ public class Level2 : LevelManager
 
     public override void OnLeftClick(int x, int y)
     {
-        _board1Actions.Push(new GAPaintStoredColor(x, y, _board1));
+        _board1Actions.Push(new GAShiftUp(x, y, _board1));
         _board2Actions.Push(new GADownSwap(x, y, _board2));
         PerformMove();
     }
 
     public override void OnRightClick(int x, int y)
     {
-        _board1Actions.Push(new GABlank(x, y, _board1));
+        _board1Actions.Push(new GAShiftUp(x, y, _board1));
         _board2Actions.Push(new GAShiftLeft(x, y, _board2));
         PerformMove();
     }

@@ -26,16 +26,18 @@ public class LevelQuiteEasy : LevelManager
                 {1, 2, 2, 5},
                 {2, 0, 3, 4},
                 {0, 3, 1, 2},
+                {5, 3, 5, 5},
             };
 
         int[,] puzzle2 = new int[,]{
                 {1, 5, 2, 2},
                 {2, 1, 4, 3},
                 {0, 3, 0, 2},
+                {2, 3, 5, 5},
             };
 
-        _board1.CreateBoard(3, 4, puzzle1);
-        _board2.CreateBoard(3, 4, puzzle2);
+        _board1.CreateBoard(4, 4, puzzle1);
+        _board2.CreateBoard(4, 4, puzzle2);
 
     }
 
