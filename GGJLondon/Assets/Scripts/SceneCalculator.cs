@@ -49,7 +49,7 @@ public class SceneCalculator : MonoBehaviour
 
     public void StartNewGame()
     {
-        GoToLevelNumber(12);
+        GoToLevelSelect();
     }
 
     public void JustBeatLevel()

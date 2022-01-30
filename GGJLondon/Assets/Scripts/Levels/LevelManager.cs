@@ -5,6 +5,8 @@ using UnityEngine;
 
 public abstract class LevelManager : MonoBehaviour
 {
+    private SceneCalculator _sceneCalculator;
+    
     [SerializeField] protected Board _board1, _board2;
     protected Stack<GameAction> _board1Actions = new Stack<GameAction>();
     protected Stack<GameAction> _board2Actions = new Stack<GameAction>();
@@ -57,6 +59,7 @@ public abstract class LevelManager : MonoBehaviour
         if (IsPlayerVictorious())
         {
             Debug.Log("Victory!");
+            _sceneCalculator.GoToLevelSelect();
         }
     }
 
@@ -126,6 +129,8 @@ public abstract class LevelManager : MonoBehaviour
     void Start()
     {
         _audioController = FindObjectOfType<AudioController>();
+        _sceneCalculator = FindObjectOfType<SceneCalculator>();
+
     }
 
     public virtual void SetupBoards(Board boardPrefab)
