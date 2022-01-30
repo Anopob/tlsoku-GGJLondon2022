@@ -27,6 +27,8 @@ public class UITile : Tile
  
     public void MenuMouseClicked()
     {
+        if(levelNumber == 0)
+            _sceneCalculator.GoToMainMenu();
         if(levelNumber == 1)
             _sceneCalculator.StartNewGame();
         if(levelNumber == 2)
