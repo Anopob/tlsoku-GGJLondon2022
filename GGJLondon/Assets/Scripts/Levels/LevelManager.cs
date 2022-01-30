@@ -123,8 +123,8 @@ public abstract class LevelManager : MonoBehaviour
         _GAToInstructions[typeof(GAShiftLeft)] = "Shift the selected row to the left.";
         _GAToInstructions[typeof(GAShiftUp)] = "Shift the selected column upwards.";
 
-        _GAToInstructions[typeof(GAStoreColor)] = "Store the selected tile's color.";
-        _GAToInstructions[typeof(GAPaintStoredColor)] = "Paint the stored color onto the selected tile.";
+        _GAToInstructions[typeof(GAStoreColor)] = "Store the selected tile's type/color.";
+        _GAToInstructions[typeof(GAPaintStoredColor)] = "The selected tile becomes the stored type/color.";
 
         _GAToInstructions[typeof(GACycle)] = "Cycle the selected tile's type.";
     }
