@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Tutorial : LevelManager
+public class Tutorial3 : LevelManager
 {
     public override string LeftBoardLeftClickInstructions => _GAToInstructions[typeof(GAShiftLeft)];
 
