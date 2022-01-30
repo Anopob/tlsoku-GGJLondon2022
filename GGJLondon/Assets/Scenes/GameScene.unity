@@ -1010,7 +1010,7 @@ PrefabInstance:
     - target: {fileID: 3929560185575844455, guid: 06247215c9eecf04ab0b05a8cad04578, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ccd123bbda1c2ba459ca5cf0ac9945a9, type: 3}
+      objectReference: {fileID: 21300000, guid: f2abedd6699ee2f468941e61f27fdde3, type: 3}
     - target: {fileID: 6152878377060782327, guid: 06247215c9eecf04ab0b05a8cad04578, type: 3}
       propertyPath: m_Name
       value: UITile
@@ -1140,7 +1140,7 @@ PrefabInstance:
     - target: {fileID: 3929560185575844455, guid: 06247215c9eecf04ab0b05a8cad04578, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6118247f249fad448a59552e6e8be546, type: 3}
+      objectReference: {fileID: 21300000, guid: ccd123bbda1c2ba459ca5cf0ac9945a9, type: 3}
     - target: {fileID: 6152878377060782327, guid: 06247215c9eecf04ab0b05a8cad04578, type: 3}
       propertyPath: m_Name
       value: UITile (1)
