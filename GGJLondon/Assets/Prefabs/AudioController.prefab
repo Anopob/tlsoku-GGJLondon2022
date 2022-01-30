@@ -49,6 +49,7 @@ MonoBehaviour:
   _buttonClickClip: {fileID: 0}
   _invalidMoveClip: {fileID: 8300000, guid: d727d239c7a57ff4790a4e6fe082f93f, type: 3}
   _validMoveClip: {fileID: 8300000, guid: d3d3eb258fa55aa4d9ec486156cd0d4c, type: 3}
+  _undoMoveClip: {fileID: 8300000, guid: a578c2dd764785a41b65c22b6ea85e3c, type: 3}
 --- !u!82 &2042782419157351515
 AudioSource:
   m_ObjectHideFlags: 0

@@ -27,16 +27,18 @@ public abstract class LevelManager : MonoBehaviour
         _audioController.PlayInvalidMoveClip();
     }
 
-    private void PerformUndo()
+    private bool PerformUndo()
     {
-        if (_board1Actions.Count ==  0) return;
+        if (_board1Actions.Count ==  0) return false;
         _board1Actions.Pop().Undo();
         _board2Actions.Pop().Undo();
+        return true;
     }
 
     public void OnUndoClick()
     {
-        PerformUndo();
+        if (PerformUndo())
+            _audioController.PlayUndoClip();
     }
 
     public void OnRedoClick()
