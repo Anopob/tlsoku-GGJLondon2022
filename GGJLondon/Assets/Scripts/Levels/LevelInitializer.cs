@@ -11,6 +11,7 @@ namespace Assets.Scripts.Levels
     public class LevelInitializer : MonoBehaviour
     {
         private SceneCalculator _sceneCalculator;
+        private UndoGameAction _undo;
         [SerializeField]
         private Board _boardPrefab;
 
@@ -31,6 +32,9 @@ namespace Assets.Scripts.Levels
             _instructions[1].text += manager.LeftBoardRightClickInstructions;
             _instructions[2].text += manager.RightBoardLeftClickIntructions;
             _instructions[3].text += manager.RightBoardRightClickIntructions;
+
+            _undo = GetComponentInChildren<UndoGameAction>();
+            _undo.LevelManager = manager;
         }
     }
 }
