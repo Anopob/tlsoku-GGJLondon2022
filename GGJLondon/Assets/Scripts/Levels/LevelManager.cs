@@ -141,6 +141,6 @@ public abstract class LevelManager : MonoBehaviour
         _board1 = Instantiate(boardPrefab, transform);
 
         _board2 = Instantiate(boardPrefab, transform);
-        _board2.transform.position = transform.position + new Vector3(150, 0, 0);
+        _board2.transform.position = transform.position + new Vector3(150, 184, 0);
     }
 }
