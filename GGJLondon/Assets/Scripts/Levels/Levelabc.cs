@@ -7,11 +7,11 @@ using UnityEngine;
 
 public class Levelabc : LevelManager
 {
-    public override string LeftBoardLeftClickInstructions => _GAToInstructions[typeof(GADownSwap)];
+    public override string LeftBoardLeftClickInstructions => _GAToInstructions[typeof(GABlank)];
 
     public override string LeftBoardRightClickInstructions => _GAToInstructions[typeof(GAShiftUp)];
 
-    public override string RightBoardLeftClickIntructions => _GAToInstructions[typeof(GAShiftUp)];
+    public override string RightBoardLeftClickIntructions => _GAToInstructions[typeof(GABlank)];
 
     public override string RightBoardRightClickIntructions => _GAToInstructions[typeof(GACycle)];
 
@@ -22,7 +22,7 @@ public class Levelabc : LevelManager
         int[,] puzzle1 = new int[,]{
                 {0, 0, 1, 0},
                 {0, 1, 0, 0},
-                {1, 1, 0, 0},
+                {1, 0, 0, 0},
                 {0, 0, 0, 1},
             };
 
@@ -40,8 +40,8 @@ public class Levelabc : LevelManager
 
     public override void OnLeftClick(int x, int y)
     {
-        _board1Actions.Push(new GADownSwap(x, y, _board1));
-        _board2Actions.Push(new GAShiftUp(x, y, _board2));
+        _board1Actions.Push(new GABlank(x, y, _board1));
+        _board2Actions.Push(new GABlank(x, y, _board2));
         PerformMove();
     }
 
