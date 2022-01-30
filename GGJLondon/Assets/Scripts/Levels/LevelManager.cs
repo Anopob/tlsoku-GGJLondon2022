@@ -14,6 +14,7 @@ public abstract class LevelManager : MonoBehaviour
     protected AudioController _audioController;
 
     public VictoryPanel VictoryPanel { get; set; }
+    public UndoGameAction undoButton;
 
     public abstract string LeftBoardLeftClickInstructions { get; }
     public abstract string LeftBoardRightClickInstructions { get; }
@@ -61,6 +62,7 @@ public abstract class LevelManager : MonoBehaviour
         if (IsPlayerVictorious())
         {
             VictoryPanel.VictoryIsAchieved();
+            undoButton.gameObject.SetActive(false);
         }
     }
 

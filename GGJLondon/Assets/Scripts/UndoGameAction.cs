@@ -8,7 +8,6 @@ public class UndoGameAction : MonoBehaviour
 
     private void CallUndo()
     {
-        Debug.Log("Undo!");
         LevelManager?.OnUndoClick();
     }
 

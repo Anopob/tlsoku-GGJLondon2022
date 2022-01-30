@@ -39,6 +39,8 @@ namespace Assets.Scripts.Levels
 
             _undo = GetComponentInChildren<UndoGameAction>();
             _undo.LevelManager = manager;
+            manager.undoButton = _undo;
+
         }
     }
 }
