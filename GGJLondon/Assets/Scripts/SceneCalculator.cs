@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class SceneCalculator : MonoBehaviour
 {
-    private const int LAST_LEVEL_INDEX = 9;
+    private const int LAST_LEVEL_INDEX = 12;
 
     [SerializeField]
     private AudioController _audioController;
@@ -78,7 +78,6 @@ public class SceneCalculator : MonoBehaviour
     {
         _level = index;
         ClickAsync("GameScene");
-        _audioController.PlayMainTheme();
     }
 
     public void GoToLevelSelect()
