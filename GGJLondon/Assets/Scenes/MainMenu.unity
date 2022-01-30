@@ -1277,8 +1277,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8732346469973813646, guid: 06247215c9eecf04ab0b05a8cad04578, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2120652515}
+    - target: {fileID: 8732346469973813646, guid: 06247215c9eecf04ab0b05a8cad04578, type: 3}
       propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MenuMouseClicked
+      value: ExitApplication
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732346469973813646, guid: 06247215c9eecf04ab0b05a8cad04578, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Exit, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06247215c9eecf04ab0b05a8cad04578, type: 3}
