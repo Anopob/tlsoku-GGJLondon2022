@@ -127,14 +127,6 @@ public abstract class LevelManager : MonoBehaviour
     {
         _audioController = FindObjectOfType<AudioController>();
     }
-    
-    void Update()
-    {
-        if (Input.GetKeyDown("r"))
-        {
-            PerformUndo();
-        }
-    }
 
     public virtual void SetupBoards(Board boardPrefab)
     {
