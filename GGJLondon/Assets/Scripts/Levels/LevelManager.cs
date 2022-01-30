@@ -139,9 +139,10 @@ public abstract class LevelManager : MonoBehaviour
     public virtual void SetupBoards(Board boardPrefab)
     {
         _board1 = Instantiate(boardPrefab, transform);
+        _board1.transform.position = transform.position + new Vector3(-470, 250, 0);
 
         _board2 = Instantiate(boardPrefab, transform);
-        _board2.transform.position = transform.position + new Vector3(150, 184, 0);
+        _board2.transform.position = transform.position + new Vector3(150, 250, 0);
 
         // move boards to highest in hierarchy for visual fix
         _board1.GetComponent<RectTransform>().SetSiblingIndex(0);

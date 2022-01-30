@@ -17,10 +17,7 @@ public class LevelSpaceTime : LevelManager
 
     public override void SetupBoards(Board boardPrefab)
     {
-        
-        _board1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        _board1.StoreType(1);
-        
+                
         base.SetupBoards(boardPrefab);
         
         int[,] puzzle1 = new int[,]{
@@ -31,10 +28,10 @@ public class LevelSpaceTime : LevelManager
             };
 
         int[,] puzzle2 = new int[,]{
-                {2, 5, 4, 5},
+                {4, 5, 4, 2},
                 {5, 4, 5, 4},
                 {4, 5, 4, 5},
-                {5, 4, 5, 2},
+                {2, 4, 5, 4},
             };
         
         _board1.CreateBoard(4,4, puzzle1);

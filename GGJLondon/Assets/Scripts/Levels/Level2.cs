@@ -17,12 +17,11 @@ public class Level2 : LevelManager
 
     public override void SetupBoards(Board boardPrefab)
     {
+        base.SetupBoards(boardPrefab);
         
         _board1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         _board1.StoreType(1);
-        
-        base.SetupBoards(boardPrefab);
-        
+                
         int[,] puzzle1 = new int[,]{
                 {3, 2, 3, 3},
                 {2, 3, 3, 3},
@@ -31,7 +30,7 @@ public class Level2 : LevelManager
             };
 
         int[,] puzzle2 = new int[,]{
-                {3, 3, 1, 3},
+                {1, 1, 1, 3},
                 {1, 3, 3, 1},
                 {3, 1, 1, 3},
                 {2, 2, 2, 2},
