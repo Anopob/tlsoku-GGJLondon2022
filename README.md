@@ -1,6 +1,10 @@
 # Reflected Recipes
 ![CoverImage](ReflectedRecipesCoverImage.png)
 
+In Reflected Recipes you play as a deity of creation, trying to assemble new worlds by rearranging their fundamental elements.  You've got a recipe book to follow, but unfortunately your vast power comes with a lack of control, and you sometimes modify the recipe itself while working. But hey, as long as your final result looks like the picture in the book, it's all fine, right?
+
+This is a puzzle game played with the mouse, using both mouse buttons.  Your goal in each level is to make the two grids into identical pairs.
+
 Made by Anopob and Neil for Global Game Jam (Game Dev London x Into Games) 2022, a 48 hour game jam with a theme of "duality".
 
 Jam link: https://itch.io/jam/game-dev-london-x-into-games-ggj22
