@@ -2357,14 +2357,13 @@ MonoBehaviour:
 
     <size=20><color=lightblue><u>Art</u></color></size>
 
-    <color=orange>All
-    icons</color>
+    <color=orange>Icons</color>
 
     https://game-icons.net/
 
 
-    <color=orange>Original background
-    image</color>
+    <color=orange>Background
+    image (original)</color>
 
     David Zydd
 
@@ -2381,16 +2380,16 @@ MonoBehaviour:
 
     <size=20><color=lightblue><u>Sounds</u></color></size>
 
-    <color=orange>Interface
-    sounds</color>
+    <color=orange>Button
+    click and undo move sounds</color>
 
     p0ss
 
     https://opengameart.org/content/interface-sounds-starter-pack
 
 
-    <color=orange>Move
-    sound</color>
+    <color=orange>Valid
+    move sound</color>
 
     NenadSimic
 
@@ -2409,7 +2408,7 @@ MonoBehaviour:
 
 
     Made
-    for Global Game Jam (Game Dev London x Into Games) 2022
+    for <color=#5157a0>Global Game Jam</color> (Game Dev London x Into Games) 2022
 
     https://itch.io/jam/game-dev-london-x-into-games-ggj22'
   m_isRightToLeft: 0
