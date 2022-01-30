@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainTheme: {fileID: 8300000, guid: 1a604e2803774374ea1706c0f6a99624, type: 3}
-  _buttonClickClip: {fileID: 0}
+  _buttonClickClip: {fileID: 8300000, guid: a4a2c80e912f1894ebe8bae2b4fd1747, type: 3}
   _invalidMoveClip: {fileID: 8300000, guid: d727d239c7a57ff4790a4e6fe082f93f, type: 3}
   _validMoveClip: {fileID: 8300000, guid: d3d3eb258fa55aa4d9ec486156cd0d4c, type: 3}
   _undoMoveClip: {fileID: 8300000, guid: a578c2dd764785a41b65c22b6ea85e3c, type: 3}

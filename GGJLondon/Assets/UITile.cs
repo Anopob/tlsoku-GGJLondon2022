@@ -7,6 +7,7 @@ public class UITile : Tile
 {
     public int levelNumber  = 0;
     private SceneCalculator _sceneCalculator;
+    private AudioController _audioController;
 
     new public void MouseIn()
     {
@@ -21,11 +22,11 @@ public class UITile : Tile
     public void MouseClicked()
     {
         _sceneCalculator.GoToLevelNumber(levelNumber);
+        _audioController.PlayButtonClickClip();
     }
  
     public void MenuMouseClicked()
     {
-        Debug.Log(levelNumber);
         if(levelNumber == 1)
             _sceneCalculator.StartNewGame();
         if(levelNumber == 2)
@@ -34,17 +35,13 @@ public class UITile : Tile
             _sceneCalculator.StartNewGame();
         if(levelNumber == 4)
             _sceneCalculator.StartNewGame();
+
+        _audioController.PlayButtonClickClip();
     }
     
-    // Start is called before the first frame update
     void Start()
     {
         _sceneCalculator = FindObjectOfType<SceneCalculator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _audioController = FindObjectOfType<AudioController>();
     }
 }
