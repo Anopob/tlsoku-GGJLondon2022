@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class UITile : Tile
 {
     public int levelNumber  = 0;
-    [SerializeField]
     private SceneCalculator _sceneCalculator;
 
     new public void MouseIn()
@@ -28,6 +27,7 @@ public class UITile : Tile
     // Start is called before the first frame update
     void Start()
     {
+        _sceneCalculator = FindObjectOfType<SceneCalculator>();
         SetType(type);
     }
 
