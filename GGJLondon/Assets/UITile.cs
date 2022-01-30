@@ -28,7 +28,6 @@ public class UITile : Tile
     void Start()
     {
         _sceneCalculator = FindObjectOfType<SceneCalculator>();
-        SetType(type);
     }
 
     // Update is called once per frame

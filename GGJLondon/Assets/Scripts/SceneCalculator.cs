@@ -36,15 +36,15 @@ public class SceneCalculator : MonoBehaviour
 
     private void Start()
     {
-        _levelNumberToScript.Add(11, typeof(Tutorial1));
-        _levelNumberToScript.Add(12, typeof(Tutorial2));
-        _levelNumberToScript.Add(13, typeof(Tutorial3));
-        _levelNumberToScript.Add(1, typeof(Level2));
-        _levelNumberToScript.Add(2, typeof(Levelabc));
-        _levelNumberToScript.Add(3, typeof(LevelPainting));
-        _levelNumberToScript.Add(4, typeof(LevelSliding));
-        _levelNumberToScript.Add(5, typeof(LevelWaterFire));
-        _levelNumberToScript.Add(10, typeof(Level1));
+        _levelNumberToScript.Add(1, typeof(Tutorial1));
+        _levelNumberToScript.Add(2, typeof(Tutorial2));
+        _levelNumberToScript.Add(3, typeof(Tutorial3));
+        _levelNumberToScript.Add(4, typeof(Level2));
+        _levelNumberToScript.Add(5, typeof(Levelabc));
+        _levelNumberToScript.Add(6, typeof(LevelPainting));
+        _levelNumberToScript.Add(7, typeof(LevelSliding));
+        _levelNumberToScript.Add(8, typeof(LevelWaterFire));
+        _levelNumberToScript.Add(12, typeof(Level1));
     }
 
     public void StartNewGame()
