@@ -26,13 +26,13 @@ public class LevelPainting : LevelManager
         _board2.StoreType(4);
 
         int[,] puzzle1 = new int[,]{
-                {1, 1, 4},
+                {1, 1, 3},
                 {2, 2, 1},
                 {3, 1, 2},
             };
 
         int[,] puzzle2 = new int[,]{
-                {3, 4, 3},
+                {3, 2, 3},
                 {1, 1, 1},
                 {3, 1, 3},
             };
